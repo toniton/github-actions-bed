@@ -10,7 +10,12 @@ on:
       secondword:
         description: "The second output string"
         value: ${{ jobs.example_job.outputs.output2 }}
-
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      
 jobs:
   example_job:
     name: Generate output
